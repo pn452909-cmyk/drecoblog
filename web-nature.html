@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr.Eco Blog</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fdfdfd;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background-color: #4a7c59;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #5f8f6f;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 15px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hero text */
+    .hero-text {
+      text-align: center;
+      background: #e9f3ea;
+      padding: 25px 15px;
+      font-size: 17px;
+      font-style: italic;
+      color: #2f5f40;
+    }
+
+    .hero-text strong {
+      display: block;
+      margin-top: 6px;
+      font-style: normal;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 800px;
+      margin: 25px auto;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h3.section-title {
+      background: #e8f5e9;
+      color: #2f5f40;
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .about p, .project p {
+      text-align: justify;
+    }
+
+    .about img {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 15px auto;
+      border-radius: 10px;
+    }
+
+    /* Timeline */
+    .timeline {
+      margin-top: 10px;
+    }
+
+    .timeline-item {
+      background: #4a7c59;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 25px;
+      margin: 8px 0;
+      width: fit-content;
+    }
+
+    /* Rewards */
+    .reward {
+      margin-top: 20px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Button */
+    .btn {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 12px 30px;
+      background: #3f4bc0;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #2e3aa1;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #4a7c59;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav { gap: 10px; }
+      .timeline-item { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>🌿 Dr.Eco BLOG</header>
+
+  <nav>
+    <a href="#">Trang chủ</a>
+    <a href="#">Giới thiệu</a>
+    <a href="#">Blog</a>
+    <a href="#">Liên hệ</a>
+  </nav>
+
+  <div class="hero-text">
+    <strong>Cùng Dr.Eco chia sẻ lối sống xanh!</strong>
+    Mẹo sống bền vững – Sản phẩm xanh – Truyền cảm hứng mỗi ngày
+  </div>
+
+  <div class="container">
+    <section class="about">
+      <h3 class="section-title">Về Dr.Eco</h3>
+      <p>
+        Dr.Eco là một dự án hành động vì môi trường do các bạn trẻ địa phương thực hiện, 
+        tập trung vào những hoạt động thiết thực nhằm giảm thiểu tác động tiêu cực 
+        của con người tới lối sống xanh.
+      </p>
+      <img src="https://i.imgur.com/EdTtxjM.jpg" alt="Nhóm Dr.Eco">
+    </section>
+
+    <section class="project">
+      <h3 class="section-title">Về dự án</h3>
+      <p>
+        Dự án “Green Challenge” mong muốn tuyên truyền, giáo dục nhằm nâng cao nhận thức,
+        trách nhiệm của trẻ em địa phương thông qua chuỗi hoạt động. Đây là cơ hội để tạo 
+        một sân chơi lành mạnh, bổ ích cho các em học sinh rèn luyện tính độc lập, sáng tạo;
+        đồng thời là dịp để các em được giao lưu, học hỏi nhằm thay đổi hành vi của học sinh 
+        trong công cuộc bảo vệ môi trường xanh – sạch – đẹp.
+      </p>
+
+      <h3 class="section-title">Timeline hoạt động</h3>
+      <div class="timeline">
+        <div class="timeline-item">20 - 26/10: Tuần đăng ký (online + offline)</div>
+        <div class="timeline-item">27/10 - 2/11: Dọn bàn học, góc nhỏ trong nhà</div>
+        <div class="timeline-item">1/11: “Giờ Trái Đất” tại trường tiểu học Dương Liễu B</div>
+        <div class="timeline-item">2/11: Ra quân dọn rác</div>
+        <div class="timeline-item">9/11: Đổi rác lấy cây và phân loại rác</div>
+        <div class="timeline-item">15/11: Workshop làm thiệp tái chế chào mừng 20/11</div>
+        <div class="timeline-item">16/11: Trồng cây + trưng bày + tổng kết sự kiện</div>
+      </div>
+
+      <div class="reward">
+        <p><strong>Phần thưởng:</strong> Móc khóa, sổ tay, giấy chứng nhận “Đại sứ xanh”</p>
+      </div>
+
+      <a href="#" class="btn">Đăng ký tham gia ngay!</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>📧 dr.ecovn@gmail.com</p>
+    <p>
+      <a href="#">Facebook</a> •
+      <a href="#">Instagram</a>
+    </p>
+  </footer>
+
+</body>
+</html>
