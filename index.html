@@ -3,198 +3,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr.Eco Blog</title>
+  <title>Dr.Eco Blog – Sống xanh cùng thiên nhiên</title>
   <style>
-    body {
+    /* RESET */
+    * {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #fdfdfd;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      background: #f5faf6;
       color: #222;
-      line-height: 1.6;
+      line-height: 1.7;
+      scroll-behavior: smooth;
     }
 
-    /* Header */
+    /* HEADER */
     header {
-      background-color: #4a7c59;
+      background: linear-gradient(90deg, #2e7d32, #66bb6a);
       color: white;
       text-align: center;
-      padding: 12px 0;
-      font-weight: bold;
-      font-size: 20px;
+      padding: 18px 0;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
 
-    /* Navbar */
+    /* NAVIGATION */
     nav {
-      background-color: #5f8f6f;
+      background: #ffffff;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 10px 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
-    nav a {
-      color: white;
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #2e7d32;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #2e7d32;
       text-decoration: none;
-      padding: 6px 15px;
-      border-radius: 20px;
-      transition: background 0.3s;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 10px 18px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
     }
 
-    nav a:hover {
-      background: rgba(255, 255, 255, 0.2);
+    .nav-links a:hover {
+      background: #e8f5e9;
+      color: #1b5e20;
+      transform: translateY(-2px);
     }
 
-    /* Hero text */
-    .hero-text {
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(46,125,50,0.1), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1523978591478-c753949ff840?auto=format&fit=crop&w=1500&q=80') center/cover;
       text-align: center;
-      background: #e9f3ea;
-      padding: 25px 15px;
+      padding: 100px 20px;
+      color: #1b5e20;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #2e5f3b;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 40px;
+      background: linear-gradient(90deg, #43a047, #2e7d32);
+      color: white;
+      border-radius: 40px;
       font-size: 17px;
-      font-style: italic;
-      color: #2f5f40;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(67,160,71,0.3);
+      transition: all 0.3s ease;
     }
 
-    .hero-text strong {
-      display: block;
-      margin-top: 6px;
-      font-style: normal;
+    .btn:hover {
+      background: linear-gradient(90deg, #388e3c, #1b5e20);
+      transform: scale(1.05);
     }
 
-    /* Main container */
+    /* MAIN CONTAINER */
     .container {
-      max-width: 800px;
-      margin: 25px auto;
+      max-width: 1000px;
+      margin: 60px auto;
       background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+      animation: fadeIn 1s ease;
     }
 
     h3.section-title {
       background: #e8f5e9;
-      color: #2f5f40;
+      color: #1b5e20;
       display: inline-block;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 16px;
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-size: 18px;
       font-weight: bold;
+      margin-bottom: 12px;
     }
 
     .about p, .project p {
       text-align: justify;
+      margin-top: 12px;
+      color: #333;
     }
 
     .about img {
       display: block;
       width: 100%;
-      max-width: 400px;
-      margin: 15px auto;
-      border-radius: 10px;
+      max-width: 500px;
+      margin: 25px auto;
+      border-radius: 14px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
 
-    /* Timeline */
+    .about img:hover { transform: scale(1.03); }
+
+    /* TIMELINE */
     .timeline {
-      margin-top: 10px;
+      margin-top: 20px;
+      border-left: 3px solid #66bb6a;
+      padding-left: 20px;
     }
 
     .timeline-item {
-      background: #4a7c59;
+      background: #66bb6a;
       color: white;
-      padding: 10px 15px;
-      border-radius: 25px;
-      margin: 8px 0;
-      width: fit-content;
+      padding: 12px 18px;
+      border-radius: 10px;
+      margin: 10px 0;
+      position: relative;
+      transition: all 0.3s ease;
     }
 
-    /* Rewards */
+    .timeline-item::before {
+      content: "🌿";
+      position: absolute;
+      left: -35px;
+      top: 8px;
+      font-size: 18px;
+    }
+
+    .timeline-item:hover {
+      background: #4caf50;
+      transform: translateX(6px);
+    }
+
+    /* REWARD */
     .reward {
-      margin-top: 20px;
+      margin-top: 25px;
       font-style: italic;
       text-align: center;
+      color: #2e5f3b;
     }
 
-    /* Button */
-    .btn {
-      display: block;
-      width: fit-content;
-      margin: 20px auto;
-      padding: 12px 30px;
-      background: #3f4bc0;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #2e3aa1;
-    }
-
-    /* Footer */
+    /* FOOTER */
     footer {
-      background-color: #4a7c59;
+      background: linear-gradient(90deg, #388e3c, #66bb6a);
       color: white;
       text-align: center;
-      padding: 25px 10px;
-      margin-top: 40px;
+      padding: 35px 15px;
+      margin-top: 70px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    footer p {
+      margin: 8px 0;
     }
 
     footer a {
-      color: white;
-      margin: 0 10px;
+      color: #fff;
+      margin: 0 8px;
       text-decoration: none;
+      transition: opacity 0.3s;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    footer a:hover { opacity: 0.8; }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
-      nav { gap: 10px; }
-      .timeline-item { font-size: 14px; }
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+      }
+      .hero h1 { font-size: 32px; }
+      .container { padding: 25px; }
     }
   </style>
 </head>
 <body>
 
-  <header>🌿 Dr.Eco BLOG</header>
+  <header>🌿 Dr.Eco Blog</header>
 
   <nav>
-    <a href="#">Trang chủ</a>
-    <a href="#">Giới thiệu</a>
-    <a href="#">Blog</a>
-    <a href="#">Liên hệ</a>
+    <div class="logo">Dr.Eco</div>
+    <div class="nav-links">
+      <a href="#">Trang chủ</a>
+      <a href="#">Giới thiệu</a>
+      <a href="#">Dự án</a>
+      <a href="#">Cộng đồng</a>
+      <a href="#">Tài nguyên</a>
+      <a href="#">Liên hệ</a>
+    </div>
   </nav>
 
-  <div class="hero-text">
-    <strong>Cùng Dr.Eco chia sẻ lối sống xanh!</strong>
-    Mẹo sống bền vững – Sản phẩm xanh – Truyền cảm hứng mỗi ngày
-  </div>
+  <section class="hero">
+    <h1>Cùng Dr.Eco chia sẻ lối sống xanh 🌱</h1>
+    <p>Truyền cảm hứng – Sống bền vững – Lan tỏa yêu thương với Trái Đất</p>
+    <a href="#" class="btn">🌍 Đăng ký tham gia ngay!</a>
+  </section>
 
   <div class="container">
     <section class="about">
       <h3 class="section-title">Về Dr.Eco</h3>
       <p>
-        Dr.Eco là một dự án hành động vì môi trường do các bạn trẻ địa phương thực hiện, 
-        tập trung vào những hoạt động thiết thực nhằm giảm thiểu tác động tiêu cực 
-        của con người tới lối sống xanh.
+        Dr.Eco là dự án vì môi trường do các bạn trẻ khởi xướng, hướng đến việc lan tỏa tinh thần 
+        “sống xanh – sống lành mạnh” thông qua hành động cụ thể, giúp cộng đồng cùng thay đổi nhận thức 
+        và hành vi trong bảo vệ hành tinh xanh.
       </p>
-      <img src="https://raw.githubusercontent.com/pn452909-cmyk/drecoblog/main/Team%20Dr.Eco.jpg
-" alt="Nhóm Dr.Eco">
+      <img src="https://i.imgur.com/EdTtxjM.jpg" alt="Nhóm Dr.Eco">
     </section>
 
     <section class="project">
-      <h3 class="section-title">Về dự án</h3>
+      <h3 class="section-title">Về dự án “Green Challenge”</h3>
       <p>
-        Dự án “Green Challenge” mong muốn tuyên truyền, giáo dục nhằm nâng cao nhận thức,
-        trách nhiệm của trẻ em địa phương thông qua chuỗi hoạt động. Đây là cơ hội để tạo 
-        một sân chơi lành mạnh, bổ ích cho các em học sinh rèn luyện tính độc lập, sáng tạo;
-        đồng thời là dịp để các em được giao lưu, học hỏi nhằm thay đổi hành vi của học sinh 
-        trong công cuộc bảo vệ môi trường xanh – sạch – đẹp.
+        Dự án nhằm giáo dục và truyền cảm hứng sống xanh cho học sinh thông qua chuỗi hoạt động thực tế, 
+        giúp các em nâng cao ý thức bảo vệ môi trường, đồng thời tạo sân chơi bổ ích để rèn luyện kỹ năng, 
+        sáng tạo và trách nhiệm với cộng đồng.
       </p>
 
       <h3 class="section-title">Timeline hoạt động</h3>
@@ -209,19 +284,19 @@
       </div>
 
       <div class="reward">
-        <p><strong>Phần thưởng:</strong> Móc khóa, sổ tay, chứng nhận “Chiến binh xanh”</p>
+        <p><strong>🎁 Phần thưởng:</strong> Móc khóa, sổ tay và chứng nhận “Đại sứ xanh”</p>
       </div>
-
-      <a href="#" class="btn">Đăng ký tham gia ngay!</a>
     </section>
   </div>
 
   <footer>
-    <p>📧 dr.ecovn@gmail.com</p>
+    <p>📧 Liên hệ: dr.ecovn@gmail.com</p>
     <p>
       <a href="#">Facebook</a> •
-      <a href="#">Instagram</a>
+      <a href="#">Instagram</a> •
+      <a href="#">YouTube</a>
     </p>
+    <p>© 2025 Dr.Eco Việt Nam – Lan tỏa lối sống xanh</p>
   </footer>
 
 </body>
