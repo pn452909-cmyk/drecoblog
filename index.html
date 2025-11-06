@@ -269,7 +269,7 @@
 
     <h1>Cùng Dr.Eco chia sẻ lối sống xanh 🌱</h1>
     <p>Truyền cảm hứng – Sống bền vững – Lan tỏa yêu thương với Trái Đất</p>
-    <a href="#" class="btn">🌍 Đăng ký tham gia ngay!</a>
+    <a href="#" class="btn register-btn">🌍 Đăng ký tham gia ngay!</a>
   </section>
 
   <div class="container">
@@ -316,6 +316,88 @@
     </p>
     <p>© 2025 Dr.Eco Việt Nam – Lan tỏa lối sống xanh</p>
   </footer>
+<!-- ================= FORM POPUP GOOGLE FORM ================= -->
+<div id="form-popup" class="form-overlay">
+  <div class="form-content">
+    <span class="close-btn" onclick="closeForm()">×</span>
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSeDcU81uKReLiYy4ApT1AIRjxzYGwKmBw7szd5SbsCv8pdiKw/viewform?embedded=true"
+      width="100%" height="650"
+      frameborder="0" marginheight="0" marginwidth="0"
+      style="border-radius: 12px;">
+      Đang tải…
+    </iframe>
+  </div>
+</div>
+
+<script>
+  // Mở popup
+  function openForm() {
+    document.getElementById("form-popup").style.display = "flex";
+    document.body.style.overflow = "hidden"; // khóa cuộn nền
+  }
+
+  // Đóng popup
+  function closeForm() {
+    document.getElementById("form-popup").style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  // Gán sự kiện cho nút đăng ký
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".register-btn");
+    if (btn) btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openForm();
+    });
+  });
+</script>
+
+<style>
+  /* Nền mờ toàn màn hình */
+  .form-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  /* Hộp form */
+  .form-content {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: popup 0.3s ease;
+  }
+
+  /* Nút đóng (x) */
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #444;
+  }
+  .close-btn:hover {
+    color: #000;
+  }
+
+  /* Hiệu ứng mở form */
+  @keyframes popup {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
 
 </body>
 </html>
